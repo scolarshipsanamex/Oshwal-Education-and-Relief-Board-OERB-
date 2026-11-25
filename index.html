@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oshwal Education Foundation | Student Educational Support Grant</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-brand-600 selection:text-white">
+
+    <!-- Top Notice Banner -->
+    <div class="bg-brand-900 text-brand-100 text-xs sm:text-sm py-2.5 px-4 text-center">
+        <div class="max-w-7xl mx-auto flex items-center justify-center gap-2">
+            <svg class="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+            </svg>
+            <span><strong>Official Portal Notice:</strong> Applications for the 2026/2027 Academic Cycle are OPEN. Ksh. 4530 processing or commitment fees are  charged.</span>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 sm:h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-3 group">
+                    <div class="w-10 h-10 rounded-xl bg-brand-700 text-white flex items-center justify-center shadow-md group-hover:bg-brand-800 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <span class="block text-lg sm:text-xl font-bold text-slate-900 tracking-tight leading-none">Oshwal Education</span>
+                        <span class="block text-xs font-medium text-brand-600 tracking-wider uppercase mt-0.5">Foundation</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#overview" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Overview</a>
+                    <a href="#coverage" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Coverage</a>
+                    <a href="#eligibility" class="text-sm font-medium text-slate-600 hover:text-brand-700 transition-colors">Eligibility</a>
+                    <a href="#apply" class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-xl shadow-sm transition-all hover:shadow">
+                        Apply Now
+                    </a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" type="button" aria-label="Toggle Menu" class="md:hidden p-2.5 rounded-xl text-slate-600 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path id="menuIconOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path id="menuIconClose" class="hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-5 space-y-2 shadow-lg">
+            <a href="#overview" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-700">Overview</a>
+            <a href="#coverage" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-700">Coverage</a>
+            <a href="#eligibility" class="mobile-nav-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 hover:bg-brand-50 hover:text-brand-700">Eligibility</a>
+            <a href="#apply" class="mobile-nav-link block text-center mt-3 px-4 py-3 rounded-xl text-base font-semibold text-white bg-brand-600 hover:bg-brand-700">Apply Now</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="overview" class="relative overflow-hidden bg-gradient-to-br from-slate-900 via-brand-900 to-slate-900 text-white py-16 sm:py-24 lg:py-28">
+            <!-- Decorative Background Pattern -->
+            <div class="absolute inset-0 opacity-10 pointer-events-none">
+                <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-brand-400 blur-3xl"></div>
+                <div class="absolute bottom-0 left-10 w-80 h-80 rounded-full bg-emerald-400 blur-3xl"></div>
+            </div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-800/80 border border-brand-600/50 text-brand-200 text-xs sm:text-sm font-medium">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            2026 / 2027 Academic Intake Open
+                        </div>
+                        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                            Student Educational <span class="text-brand-300">Support Grant</span>
+                        </h1>
+                        <p class="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+                            Empowering bright, needy, and vulnerable students—including orphans and learners from marginalized households—to complete their higher education without financial barriers.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                            <a href="#apply" class="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-slate-900 bg-white hover:bg-slate-100 rounded-xl shadow-lg transition-all">
+                                Start Online Application
+                                <svg class="w-5 h-5 ml-2 text-brand-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                            <a href="#eligibility" class="inline-flex items-center justify-center px-6 py-3.5 text-base font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/20 rounded-xl transition-all">
+                                View Requirements
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Supported Institutions Card -->
+                    <div class="lg:col-span-5">
+                        <div class="bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 sm:p-8 shadow-2xl space-y-6">
+                            <h2 class="text-lg font-semibold text-white border-b border-white/15 pb-3">Eligible Institution Categories</h2>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-brand-500/30 border border-brand-400/30 flex items-center justify-center shrink-0 text-brand-200 font-bold">01</div>
+                                    <div>
+                                        <h3 class="font-semibold text-white">Accredited Universities</h3>
+                                        <p class="text-sm text-slate-300 mt-0.5">Undergraduate degree and diploma programs in public and chartered private universities.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-emerald-500/30 border border-emerald-400/30 flex items-center justify-center shrink-0 text-emerald-200 font-bold">02</div>
+                                    <div>
+                                        <h3 class="font-semibold text-white">Medical Training Colleges</h3>
+                                        <p class="text-sm text-slate-300 mt-0.5">Nursing, clinical medicine, pharmacy, and allied health sciences certificate and diploma trainees.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-amber-500/30 border border-amber-400/30 flex items-center justify-center shrink-0 text-amber-200 font-bold">03</div>
+                                    <div>
+                                        <h3 class="font-semibold text-white">TVET Institutions</h3>
+                                        <p class="text-sm text-slate-300 mt-0.5">National polytechnics, technical training institutes, and vocational craft & artisan courses.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What the Scholarship Covers Section -->
+        <section id="coverage" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-14">
+                    <span class="text-sm font-semibold uppercase tracking-wider text-brand-600">Comprehensive Support</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">What the Scholarship Covers</h2>
+                    <p class="mt-4 text-base sm:text-lg text-slate-600">
+                        Approved grant disbursements are paid directly to the student's accredited institution to cover essential academic and statutory charges.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Item 1: Tuition -->
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-brand-300 hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Tuition Fees</h3>
+                        <p class="mt-2 text-sm text-slate-600 leading-relaxed">Full or partial semester/term tuition coverage based on verified financial need assessment.</p>
+                    </div>
+
+                    <!-- Item 2: Registration & Renewal -->
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-brand-300 hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Registration & Renewal</h3>
+                        <p class="mt-2 text-sm text-slate-600 leading-relaxed">Covers initial student admission registration as well as annual semester/academic year renewal fees.</p>
+                    </div>
+
+                    <!-- Item 3: Examination & Assessment -->
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-brand-300 hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Examination & Assessment</h3>
+                        <p class="mt-2 text-sm text-slate-600 leading-relaxed">Includes internal university exams, national technical assessments, and medical council exam fees.</p>
+                    </div>
+
+                    <!-- Item 4: Booking & Certification -->
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200/80 hover:border-brand-300 hover:shadow-md transition-all">
+                        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900">Booking & Certification</h3>
+                        <p class="mt-2 text-sm text-slate-600 leading-relaxed">Covers practical attachment/exam booking charges and final graduation certification fees.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Eligibility & Transparency Notice Section -->
+        <section id="eligibility" class="py-16 sm:py-24 bg-slate-100 border-y border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                    <!-- Left: Criteria & Documents -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div>
+                            <span class="text-sm font-semibold uppercase tracking-wider text-brand-600">Guidelines & Checklist</span>
+                            <h2 class="mt-2 text-3xl font-bold text-slate-900">Eligibility & Required Documents</h2>
+                            <p class="mt-3 text-slate-600">
+                                Applicants must demonstrate genuine financial need and hold an active admission or continuing student status at an accredited tertiary institution.
+                            </p>
+                        </div>
+
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-4">
+                            <h3 class="font-bold text-slate-900 text-lg">Mandatory Supporting Documents</h3>
+                            <ul class="space-y-3.5 text-sm sm:text-base text-slate-700">
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span><strong>Academic Admission Letter:</strong> Official calling letter or current student ID / fee structure from your University, Medical Training College, or TVET institution.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span><strong>Identification Document:</strong> Copy of National ID Card, Passport, or Birth Certificate (for applicants under 18).</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span><strong>Academic Transcripts / Results:</strong> Secondary school certificate or latest college/university semester transcripts.</span>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <svg class="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span><strong>Financial Need & Vulnerability Verification:</strong> Supporting documentation such as parent death certificate(s) for orphans, guardian income statement, or local administrative endorsement.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Right: Selection Process & Anti-Fraud Advisory -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-xl bg-brand-100 text-brand-700 flex items-center justify-center">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold text-slate-900">Independent Review Process</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                All applications are evaluated strictly on verified financial vulnerability and academic commitment by an independent Grant Selection Committee. Submission of an application initiates verification and does not guarantee an award until committee vetting is concluded. All applications submitted without pay shall be automatically be disqualified.
+                            </p>
+                        </div>
+
+                        <!-- Applicant Protection Notice -->
+                        <div class="bg-emerald-50 border border-emerald-200 rounded-2xl p-6 sm:p-8">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-lg font-bold text-emerald-950">Zero-Fee Policy Advisory</h3>
+                            </div>
+                            <p class="text-sm text-emerald-900 leading-relaxed">
+                                Our educational scholarships <strong>MUST</strong> require applicants to pay upfront commitment, registration, or document processing fees via mobile money or bank transfer to the number 0108458813 Beatrice Awour Regional Cordinator.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Online Scholarship Application Form Section -->
+        <section id="apply" class="py-16 sm:py-24 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-10">
+                    <span class="text-sm font-semibold uppercase tracking-wider text-brand-600">Application Portal</span>
+                    <h2 class="mt-2 text-3xl sm:text-4xl font-bold text-slate-900">Online Scholarship Application Form</h2>
+                    <p class="mt-3 text-slate-600">Complete all required fields accurately. Fields marked with <span class="text-rose-600 font-semibold">*</span> are mandatory.</p>
+                </div>
+
+                <!-- Inline Validation Alert Box (Replaces browser alert()) -->
+                <div id="formErrorBanner" class="hidden mb-6 p-4 rounded-xl bg-rose-50 border border-rose-200 text-rose-800 text-sm flex items-start gap-3">
+                    <svg class="w-5 h-5 text-rose-600 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    <div>
+                        <p class="font-semibold">Please review the highlighted fields below:</p>
+                        <p id="formErrorText" class="mt-0.5">Ensure all required information and supporting documents are provided before submitting.</p>
+                    </div>
+                </div>
+
+                <form id="scholarshipForm" novalidate class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm space-y-8">
+                    <!-- Section 1: Personal Details -->
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 pb-3 border-b border-slate-200 mb-5 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-brand-600 text-white text-xs flex items-center justify-center">1</span>
+                            Applicant Personal Information
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div class="sm:col-span-2">
+                                <label for="fullName" class="block text-sm font-medium text-slate-700 mb-1.5">Full Legal Name <span class="text-rose-600">*</span></label>
+                                <input type="text" id="fullName" name="fullName" required placeholder="e.g., Jane Wanjiku Kamau"
+                                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition">
+                                <p class="error-msg hidden mt-1 text-xs text-rose-600">Please enter your full name.</p>
+                            </div>
+
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-700 mb-1.5">Email Address <span class="text-rose-600">*</span></label>
+                                <input type="email" id="email" name="email" required placeholder="applicant@example.com"
+                                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition">
+                                <p class="error-msg hidden mt-1 text-xs text-rose-600">Please enter a valid email address.</p>
+                            </div>
+
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-slate-700 mb-1.5">Phone Number <span class="text-rose-600">*</span></label>
+                                <input type="tel" id="phone" name="phone" required placeholder="e.g., +254 700 000 000"
+                                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition">
+                                <p class="error-msg hidden mt-1 text-xs text-rose-600">Please enter a valid contact phone number.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 2: Academic Information -->
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 pb-3 border-b border-slate-200 mb-5 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-brand-600 text-white text-xs flex items-center justify-center">2</span>
+                            Institution & Course Details
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <div>
+                                <label for="institutionCategory" class="block text-sm font-medium text-slate-700 mb-1.5">Institution Category <span class="text-rose-600">*</span></label>
+                                <select id="institutionCategory" name="institutionCategory" required
+                                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition">
+                                    <option value="">-- Select Category --</option>
+                                    <option value="University">University</option>
+                                    <option value="Medical Training College">Medical Training College</option>
+                                    <option value="TVET Institution">TVET Institution</option>
+                                </select>
+                                <p class="error-msg hidden mt-1 text-xs text-rose-600">Please select an institution category.</p>
+                            </div>
+
+                            <div>
+                                <label for="yearOfStudy" class="block text-sm font-medium text-slate-700 mb-1.5">Year of Study <span class="text-rose-600">*</span></label>
+                                <select id="yearOfStudy" name="yearOfStudy" required
+                                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition">
+                                    <option value="">-- Select Year --</option>
+                                    <option value="Year 1 (Incoming / First Year)">Year 1 (Incoming / First Year)</option>
+                                    <option value="Year 2">Year 2</option>
+                                    <option value="Year 3">Year 3</option>
+                                    <option value="Year 4">Year 4</option>
+                                    <option value="Year 5 / Final Year">Year 5 / Final Year</option>
+                                </select>
+                                <p class="error-msg hidden mt-1 text-xs text-rose-600">Please select your current year of study.</p>
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="institutionName" class="block text-sm font-medium text-slate-700 mb-1.5">Name of Institution <span class="text-rose-600">*</span></label>
+                                <input type="text" id="institutionName" name="institutionName" required placeholder="e.g., National Polytechnic / State University / Medical College"
+                                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition">
+                                <p class="error-msg hidden mt-1 text-xs text-rose-600">Please enter the name of your institution.</p>
+                            </div>
+
+                            <div class="sm:col-span-2">
+                                <label for="courseOfStudy" class="block text-sm font-medium text-slate-700 mb-1.5">Course / Program of Study <span class="text-rose-600">*</span></label>
+                                <input type="text" id="courseOfStudy" name="courseOfStudy" required placeholder="e.g., Diploma in Clinical Medicine / BSc. Computer Science / Craft Certificate in Electrical Engineering"
+                                    class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition">
+                                <p class="error-msg hidden mt-1 text-xs text-rose-600">Please enter your course or program of study.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 3: Financial Need Statement -->
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 pb-3 border-b border-slate-200 mb-5 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-brand-600 text-white text-xs flex items-center justify-center">3</span>
+                            Financial Need Statement
+                        </h3>
+                        <div>
+                            <label for="needStatement" class="block text-sm font-medium text-slate-700 mb-1.5">
+                                Statement of Financial Need & Background <span class="text-rose-600">*</span>
+                            </label>
+                            <textarea id="needStatement" name="needStatement" rows="4" required
+                                placeholder="Briefly describe your family background, financial challenges, orphan/vulnerability status (if applicable), and how this scholarship will support your education..."
+                                class="w-full px-4 py-3 rounded-xl bg-white border border-slate-300 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition"></textarea>
+                            <div class="flex justify-between items-center mt-1">
+                                <p class="error-msg hidden text-xs text-rose-600">Please provide a statement explaining your financial need (minimum 30 characters).</p>
+                                <span id="charCount" class="text-xs text-slate-400 ml-auto">0 characters</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Section 4: Supporting Documents Upload -->
+                    <div>
+                        <h3 class="text-lg font-bold text-slate-900 pb-3 border-b border-slate-200 mb-5 flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-brand-600 text-white text-xs flex items-center justify-center">4</span>
+                            Supporting Documents Upload
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                            <!-- File 1: Admission Letter -->
+                            <div class="p-4 rounded-xl bg-white border border-slate-200">
+                                <label for="docAdmission" class="block text-sm font-medium text-slate-800 mb-1">Admission Letter / Fee Structure <span class="text-rose-600">*</span></label>
+                                <p class="text-xs text-slate-500 mb-3">PDF, JPG, or PNG (Max 5MB)</p>
+                                <input type="file" id="docAdmission" name="docAdmission" accept=".pdf,.jpg,.jpeg,.png" required
+                                    class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-3.5 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100 cursor-pointer">
+                                <p class="error-msg hidden mt-1.5 text-xs text-rose-600">Please upload your admission letter or fee structure.</p>
+                            </div>
+
+                            <!-- File 2: ID / Birth Certificate -->
+                            <div class="p-4 rounded-xl bg-white border border-slate-200">
+                                <label for="docId" class="block text-sm font-medium text-slate-800 mb-1">National ID / Birth Certificate <span class="text-rose-600">*</span></label>
+                                <p class="text-xs text-slate-500 mb-3">PDF, JPG, or PNG (Max 5MB)</p>
+                                <input type="file" id="docId" name="docId" accept=".pdf,.jpg,.jpeg,.png" required
+                                    class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-3.5 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100 cursor-pointer">
+                                <p class="error-msg hidden mt-1.5 text-xs text-rose-600">Please upload a copy of your ID or Birth Certificate.</p>
+                            </div>
+
+                            <!-- File 3: Academic Transcripts -->
+                            <div class="p-4 rounded-xl bg-white border border-slate-200">
+                                <label for="docTranscripts" class="block text-sm font-medium text-slate-800 mb-1">Academic Transcripts / Certificates <span class="text-rose-600">*</span></label>
+                                <p class="text-xs text-slate-500 mb-3">PDF, JPG, or PNG (Max 5MB)</p>
+                                <input type="file" id="docTranscripts" name="docTranscripts" accept=".pdf,.jpg,.jpeg,.png" required
+                                    class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-3.5 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-brand-50 file:text-brand-700 hover:file:bg-brand-100 cursor-pointer">
+                                <p class="error-msg hidden mt-1.5 text-xs text-rose-600">Please upload your academic transcripts.</p>
+                            </div>
+
+                            <!-- File 4: Need Assessment / Supporting Proof -->
+                            <div class="p-4 rounded-xl bg-white border border-slate-200">
+                                <label for="docNeedProof" class="block text-sm font-medium text-slate-800 mb-1">Financial Need / Vulnerability Proof <span class="text-slate-400 font-normal">(Optional)</span></label>
+                                <p class="text-xs text-slate-500 mb-3">Death certificate, guardian letter, etc.</p>
+                                <input type="file" id="docNeedProof" name="docNeedProof" accept=".pdf,.jpg,.jpeg,.png"
+                                    class="block w-full text-xs text-slate-600 file:mr-3 file:py-2 file:px-3.5 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-slate-100 file:text-slate-700 hover:file:bg-slate-200 cursor-pointer">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Declaration Checkbox -->
+                    <div class="pt-2">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" id="declaration" required class="mt-1 w-4 h-4 rounded text-brand-600 border-slate-300 focus:ring-brand-500">
+                            <span class="text-sm text-slate-600">
+                                I declare that the information and documents provided in this application are true and accurate. I understand that all awards are subject to verification by the Oshwal Education Foundation Selection Committee. <span class="text-rose-600">*</span>
+                            </span>
+                        </label>
+                        <p id="declarationError" class="hidden mt-1.5 text-xs text-rose-600 pl-7">You must confirm the declaration before submitting.</p>
+                    </div>
+
+                    <!-- Pay and Submit Button -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200">
+                        <p class="text-xs text-slate-500">Application fee: <strong class="text-emerald-700">Not Free (4530.00 pay to send money 0108458813)</strong></p>
+                        <button type="submit" class="w-full sm:w-auto inline-flex items-center justify-center px-8 py-3.5 text-base font-semibold text-white bg-brand-600 hover:bg-brand-700 rounded-xl shadow-md hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-500">
+                            Submit Application
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-slate-800">
+                <div>
+                    <span class="text-lg font-bold text-white">Oshwal Education Foundation</span>
+                    <p class="text-sm text-slate-400 mt-1">Supporting equitable access to University, Medical, and Technical Education.</p>
+                </div>
+                <div class="flex flex-wrap gap-6 text-sm">
+                    <a href="#overview" class="hover:text-white transition-colors">Overview</a>
+                    <a href="#coverage" class="hover:text-white transition-colors">Coverage</a>
+                    <a href="#eligibility" class="hover:text-white transition-colors">Eligibility</a>
+                    <a href="#apply" class="hover:text-white transition-colors">Apply Now</a>
+                </div>
+            </div>
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+                <p>&copy; 2026 Oshwal Education Foundation (Sample Portal Template). All rights reserved.</p>
+                <p>No application fees are charged at any stage of the scholarship selection process.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Application Confirmation Modal -->
+    <div id="confirmationModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" class="hidden fixed inset-0 z-50 overflow-y-auto">
+        <!-- Backdrop -->
+        <div id="modalBackdrop" class="fixed inset-0 bg-slate-900/75 backdrop-blur-sm transition-opacity"></div>
+
+        <!-- Modal Panel -->
+        <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-6">
+            <div class="relative w-full max-w-lg transform overflow-hidden rounded-2xl bg-white text-left shadow-2xl transition-all border border-slate-200">
+                <!-- Top Success Header -->
+                <div class="bg-emerald-600 px-6 py-6 text-white text-center">
+                    <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-white/20 mb-3">
+                        <svg class="h-8 w-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                    </div>
+                    <h3 id="modalTitle" class="text-xl font-bold">Application Submitted Successfully</h3>
+                    <p class="text-emerald-100 text-sm mt-1">Your details have been logged for committee review.</p>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="p-6 space-y-5">
+                    <!-- Reference ID Box -->
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 flex items-center justify-between gap-3">
+                        <div>
+                            <span class="block text-xs font-medium text-slate-500 uppercase tracking-wider">Application Reference ID</span>
+                            <span id="refIdDisplay" class="text-lg font-mono font-bold text-brand-700">AEF-2026-00000</span>
+                        </div>
+                        <button type="button" id="copyRefBtn" class="px-3 py-2 text-xs font-semibold text-brand-700 bg-brand-50 hover:bg-brand-100 rounded-lg border border-brand-200 transition-colors">
+                            Copy ID
+                        </button>
+                    </div>
+
+                    <!-- Submitted Details Summary -->
+                    <div class="space-y-2.5 text-sm">
+                        <h4 class="font-semibold text-slate-900">Submission Summary</h4>
+                        <div class="rounded-xl border border-slate-200 divide-y divide-slate-100 text-slate-700">
+                            <div class="px-4 py-2.5 flex justify-between gap-4">
+                                <span class="text-slate-500">Applicant:</span>
+                                <span id="summaryName" class="font-medium text-right text-slate-900">-</span>
+                            </div>
+                            <div class="px-4 py-2.5 flex justify-between gap-4">
+                                <span class="text-slate-500">Category:</span>
+                                <span id="summaryCategory" class="font-medium text-right text-slate-900">-</span>
+                            </div>
+                            <div class="px-4 py-2.5 flex justify-between gap-4">
+                                <span class="text-slate-500">Institution:</span>
+                                <span id="summaryInstitution" class="font-medium text-right text-slate-900">-</span>
+                            </div>
+                            <div class="px-4 py-2.5 flex justify-between gap-4">
+                                <span class="text-slate-500">Course & Year:</span>
+                                <span id="summaryCourse" class="font-medium text-right text-slate-900">-</span>
+                            </div>
+                            <div class="px-4 py-2.5 flex justify-between gap-4">
+                                <span class="text-slate-500">Documents Attached:</span>
+                                <span id="summaryDocs" class="font-medium text-right text-emerald-700">-</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Next Steps Info -->
+                    <div class="bg-brand-50 border border-brand-100 rounded-xl p-4 text-xs sm:text-sm text-brand-950 space-y-1.5">
+                        <p class="font-semibold text-brand-900">Next Steps in the Review Process:</p>
+                        <ul class="list-disc pl-4 space-y-1 text-brand-800">
+                            <li>Our verification team will authenticate your academic admission and supporting records.</li>
+                            <li>Shortlisted candidates will be notified via official email regarding committee vetting outcomes.</li>
+                            <li>Approved disbursements are remitted directly to your institution's student fee account.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Close Button -->
+                    <div class="pt-1">
+                        <button type="button" id="closeModalBtn" class="w-full py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl transition-colors">
+                            Done & Close Window
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Navigation Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIconOpen = document.getElementById('menuIconOpen');
+            const menuIconClose = document.getElementById('menuIconClose');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            function toggleMobileMenu() {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                mobileMenu.classList.toggle('hidden', !isHidden);
+                menuIconOpen.classList.toggle('hidden', isHidden);
+                menuIconClose.classList.toggle('hidden', !isHidden);
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        toggleMobileMenu();
+                    }
+                });
+            });
+
+            // Character Counter for Financial Need Statement
+            const needStatement = document.getElementById('needStatement');
+            const charCount = document.getElementById('charCount');
+            needStatement.addEventListener('input', () => {
+                charCount.textContent = `${needStatement.value.trim().length} characters`;
+            });
+
+            // Form Validation & Submission Handling
+            const form = document.getElementById('scholarshipForm');
+            const formErrorBanner = document.getElementById('formErrorBanner');
+            const confirmationModal = document.getElementById('confirmationModal');
+            const closeModalBtn = document.getElementById('closeModalBtn');
+            const modalBackdrop = document.getElementById('modalBackdrop');
+            const copyRefBtn = document.getElementById('copyRefBtn');
+
+            function setFieldError(inputEl, hasError) {
+                const container = inputEl.closest('div');
+                const errorMsg = container ? container.querySelector('.error-msg') : null;
+                if (hasError) {
+                    inputEl.classList.add('border-rose-500', 'ring-1', 'ring-rose-500');
+                    inputEl.classList.remove('border-slate-300');
+                    if (errorMsg) errorMsg.classList.remove('hidden');
+                } else {
+                    inputEl.classList.remove('border-rose-500', 'ring-1', 'ring-rose-500');
+                    inputEl.classList.add('border-slate-300');
+                    if (errorMsg) errorMsg.classList.add('hidden');
+                }
+            }
+
+            function validateForm() {
+                let isValid = true;
+                let firstInvalidEl = null;
+
+                const fullName = document.getElementById('fullName');
+                const email = document.getElementById('email');
+                const phone = document.getElementById('phone');
+                const institutionCategory = document.getElementById('institutionCategory');
+                const yearOfStudy = document.getElementById('yearOfStudy');
+                const institutionName = document.getElementById('institutionName');
+                const courseOfStudy = document.getElementById('courseOfStudy');
+                const docAdmission = document.getElementById('docAdmission');
+                const docId = document.getElementById('docId');
+                const docTranscripts = document.getElementById('docTranscripts');
+                const declaration = document.getElementById('declaration');
+                const declarationError = document.getElementById('declarationError');
+
+                // Validate Text Inputs
+                const textChecks = [
+                    { el: fullName, valid: fullName.value.trim().length >= 2 },
+                    { el: email, valid: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim()) },
+                    { el: phone, valid: phone.value.trim().length >= 7 },
+                    { el: institutionCategory, valid: institutionCategory.value !== '' },
+                    { el: yearOfStudy, valid: yearOfStudy.value !== '' },
+                    { el: institutionName, valid: institutionName.value.trim().length >= 2 },
+                    { el: courseOfStudy, valid: courseOfStudy.value.trim().length >= 2 },
+                    { el: needStatement, valid: needStatement.value.trim().length >= 30 }
+                ];
+
+                textChecks.forEach(item => {
+                    setFieldError(item.el, !item.valid);
+                    if (!item.valid) {
+                        isValid = false;
+                        if (!firstInvalidEl) firstInvalidEl = item.el;
+                    }
+                });
+
+                // Validate Required File Inputs
+                const fileChecks = [docAdmission, docId, docTranscripts];
+                fileChecks.forEach(fileInput => {
+                    const hasFile = fileInput.files && fileInput.files.length > 0;
+                    setFieldError(fileInput, !hasFile);
+                    if (!hasFile) {
+                        isValid = false;
+                        if (!firstInvalidEl) firstInvalidEl = fileInput;
+                    }
+                });
+
+                // Validate Declaration Checkbox
+                if (!declaration.checked) {
+                    declarationError.classList.remove('hidden');
+                    isValid = false;
+                    if (!firstInvalidEl) firstInvalidEl = declaration;
+                } else {
+                    declarationError.classList.add('hidden');
+                }
+
+                if (!isValid) {
+                    formErrorBanner.classList.remove('hidden');
+                    if (firstInvalidEl) {
+                        firstInvalidEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        firstInvalidEl.focus({ preventScroll: true });
+                    }
+                } else {
+                    formErrorBanner.classList.add('hidden');
+                }
+
+                return isValid;
+            }
+
+            // Clear errors dynamically on user input
+            form.querySelectorAll('input, select, textarea').forEach(field => {
+                field.addEventListener('input', () => setFieldError(field, false));
+                field.addEventListener('change', () => setFieldError(field, false));
+            });
+
+            // Generate Application Reference ID
+            function generateReferenceId() {
+                const randomNum = Math.floor(10000 + Math.random() * 90000);
+                return `AEF-2026-${randomNum}`;
+            }
+
+            // Form Submit Handler
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                if (!validateForm()) return;
+
+                // Populate Modal Summary
+                const refId = generateReferenceId();
+                document.getElementById('refIdDisplay').textContent = refId;
+                document.getElementById('summaryName').textContent = document.getElementById('fullName').value.trim();
+                document.getElementById('summaryCategory').textContent = document.getElementById('institutionCategory').value;
+                document.getElementById('summaryInstitution').textContent = document.getElementById('institutionName').value.trim();
+                document.getElementById('summaryCourse').textContent = `${document.getElementById('courseOfStudy').value.trim()} (${document.getElementById('yearOfStudy').value})`;
+
+                // Count attached files
+                const fileIds = ['docAdmission', 'docId', 'docTranscripts', 'docNeedProof'];
+                const attachedCount = fileIds.reduce((count, id) => {
+                    const input = document.getElementById(id);
+                    return count + (input.files && input.files.length > 0 ? 1 : 0);
+                }, 0);
+                document.getElementById('summaryDocs').textContent = `${attachedCount} file(s) verified`;
+
+                // Show Confirmation Modal
+                confirmationModal.classList.remove('hidden');
+                document.body.classList.add('overflow-hidden');
+            });
+
+            // Copy Reference ID to Clipboard (using safe fallback method)
+            copyRefBtn.addEventListener('click', () => {
+                const refText = document.getElementById('refIdDisplay').textContent;
+                const tempInput = document.createElement('input');
+                tempInput.value = refText;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+
+                const originalText = copyRefBtn.textContent;
+                copyRefBtn.textContent = 'Copied!';
+                copyRefBtn.classList.add('bg-emerald-100', 'text-emerald-800', 'border-emerald-300');
+                setTimeout(() => {
+                    copyRefBtn.textContent = originalText;
+                    copyRefBtn.classList.remove('bg-emerald-100', 'text-emerald-800', 'border-emerald-300');
+                }, 2000);
+            });
+
+            // Close Modal and Reset Form
+            function closeConfirmationModal() {
+                confirmationModal.classList.add('hidden');
+                document.body.classList.remove('overflow-hidden');
+                form.reset();
+                charCount.textContent = '0 characters';
+            }
+
+            closeModalBtn.addEventListener('click', closeConfirmationModal);
+            modalBackdrop.addEventListener('click', closeConfirmationModal);
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !confirmationModal.classList.contains('hidden')) {
+                    closeConfirmationModal();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
